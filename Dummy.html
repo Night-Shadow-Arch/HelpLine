@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Dummy Page</title>
+    <link rel="stylesheet" href="Dummy.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-right">
+            <a href="login.html" class="btn">Login</a>
+            <a href="hackathon.html" class="btn">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Symptom Checker</h1>
+        <p>Identify possible conditions and treatment related to your symptoms.</p>
+
+        <form class="symptom-form">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter age" min="0" max="120">
+            </div>
+
+            <div class="form-group">
+                <label>Sex</label>
+                <div class="sex-options">
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="Male">
+                        <span class="radio-label">Male</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="Female">
+                        <span class="radio-label">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="continue-btn">Continue</button>
+        </form>
+    </main>
+</body>
+
+</html>

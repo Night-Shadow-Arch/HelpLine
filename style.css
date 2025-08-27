@@ -5,7 +5,7 @@ body{
     
 }
 form {
-  width: 300px;
+  width: 350px;
   margin: 100px auto;
   padding: 20px;
   background-color: #f2f2f2;
@@ -24,8 +24,63 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-<div class="email">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
- </div>
+
+label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    margin-bottom: px;
 }
+
+/* Style the input field */
+input#email {
+    width: 300px;      
+    padding: 10px;     
+    font-size: 14px;   
+    border: 2px solid #ccc; 
+    border-radius: 5px;    
+    outline: none;         
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+input#email:focus {
+    border-color: #2170ca;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+input#password {
+    
+        width: 300px;
+        padding: 10px;
+        font-size: 14px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input#password:focus{
+        border-color: #1f75d7;
+        background-origin: 0 0 5px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    input#username {
+    
+        width: 300px;
+        padding: 10px;
+        font-size: 14px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input#username:focus{
+        border-color: #1f75d7;
+        background-origin: 0 0 5px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+
+

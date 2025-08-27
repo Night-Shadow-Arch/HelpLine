@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-right {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.symptom-form {
+    margin-top: 20px;
+    background: white;
+    padding: 90px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="number"] {
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.sex-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.radio-label {
+    font-size: 14px;
+    color: #333;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.continue-btn:hover {
+    background-color: #1e7e34;
+}
+
+
+/* Responsive design for smaller screens */
+
+@media (max-width: 480px) {
+    .symptom-form {
+        width: 90%;
+        padding: 20px;
+    }
+    .sex-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
