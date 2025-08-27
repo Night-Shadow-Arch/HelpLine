@@ -1,0 +1,31 @@
+body{
+    
+    background-color: rgb(65, 60, 226);
+    text-align: center;
+    
+}
+form {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+input, button {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+<div class="email">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+ </div>
+}
