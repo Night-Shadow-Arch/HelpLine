@@ -1,107 +1,87 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
-}
-
-body {
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f0f4f8;
 }
 
 .login-container {
-  background: #fff;
-  padding: 40px 30px;
+  background: white;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  width: 320px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  width: 300px;
   text-align: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .login-container h1 {
-  margin-bottom: 25px;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-input {
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 6px;
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 95%;
+  padding: 10px;
   border: 1px solid #ccc;
-  transition: border 0.3s ease;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-input:focus {
-  border-color: #27ae60;
-  outline: none;
-}
-
-button {
-  margin-top: 15px;
+.login-btn {
   padding: 12px;
+  background-color: #007BFF;
+  color: white;
   border: none;
   border-radius: 6px;
-  background: #27ae60;
-  color: #fff;
+  font-size: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
-button:hover {
-  background: #219150;
+.login-btn:hover {
+  background-color: #0056b3;
 }
 
-.signup-text {
-  margin-top: 15px;
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link p {
+  margin: 5px 0;
   font-size: 14px;
-  color: #555;
 }
 
-.signup-text a {
-  color: #27ae60;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.signup-text a:hover {
-  color: #219150;
-}
-
-.btn {
-  display: block;          
-  width: 100%;
-  padding: 12px;
-  text-align: center;
-  background-color: #27ae60;
+.register-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #28a745;
   color: white;
+  text-decoration: none;
   border-radius: 6px;
-  text-decoration: none;   
-  font-weight: bold;
-  margin-top: 15px;
-  transition: background 0.3s ease;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.btn:hover {
-  background-color: #219150; 
-  cursor: pointer;
+.register-btn:hover {
+  background-color: #1e7e34;
 }
