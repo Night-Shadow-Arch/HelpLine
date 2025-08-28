@@ -8,9 +8,11 @@
 </head>
 <body>
   <div class="signup-container">
+    <div class="icon">⚕️</div>
     <h1>Create an Account</h1>
+    <p class="subtitle">Join us and access medical resources easily.</p>
+
     <form class="signup-form">
-      
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" placeholder="Enter username" required>
@@ -31,8 +33,10 @@
         <label for="terms">I accept the Terms and Conditions</label>
       </div>
 
-      <button type="submit" class="signup-btn"><a href="Main page.html">Sign Up</a></button>
+      <button type="button" class="signup-btn" onclick="window.location.href='Main page.html'">Sign Up</button>
     </form>
+
+    <p class="account-text">Already have an account? <a href="login.html">Login here</a></p>
   </div>
 </body>
 </html>

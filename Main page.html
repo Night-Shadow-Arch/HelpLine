@@ -1,108 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Symptom Checker</title>
-  <link rel="stylesheet" href="Main page.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curex - Healthcare Destination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Main page.css">
 </head>
+
 <body>
-  <header>
+    <header>
+        <div class="logo">
+            <i class="fas fa-heartbeat logo-icon"></i>
+            <span class="logo-text">HelpLine</span>
+        </div>
+        <div class="profile-container">
+            <img src="file:///C:/Users/prati/OneDrive/Desktop/R.png" alt="Profile" class="profile-icon" id="profileIcon">
+            <span class="username-tooltip" id="usernameTooltip">Hello, user</span>
+        </div>
+    </header>
 
-<div class="profile-container">
-  <img src="f9a125c0-16c8-426b-9650-a9dafbcd2e7b.png" alt="Profile" class="profile-icon" id="profileIcon">
-  <span class="username-tooltip" id="usernameTooltip">Hello, Gaurab</span>
-</div>
-  </header>
-
-  <main class="content">
-    <h1>Symptom Checker</h1>
-    <form class="symptom-form" id="symptomForm">
-      <div class="form-step active" id="step1">
-        <div class="form-group">
-          <label for="age">Age</label>
-          <input type="number" id="age" placeholder="Enter your age" required>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Welcome to your health care destination.</h1>
+                <div class="highlight">
+                    <p>"YOUR HEALTH, OUR PRIORITY. GET EXPERT MEDICAL GUIDANCE ANYTIME, ANYWHERE."</p>
+                </div>
+                <p>Find your disease with the symptoms and take the care you need. We're here to help you feel better and stay healthy. Learn about our services and reach out to us anytime!</p>
+            </div>
+            <div class="hero-image">
+                <img src="file:///C:/Users/prati/OneDrive/Desktop/unnamed.jpg" alt="Healthcare professionals">
+            </div>
         </div>
 
-        <div class="form-group">
-          <label>Sex</label>
-          <div class="sex-buttons">
-            <button type="button" class="sex-btn" data-value="Male">Male</button>
-            <button type="button" class="sex-btn" data-value="Female">Female</button>
-          </div>
+        <div class="services">
+            <div class="service-card" id="symptomCheckerBtn">
+                <i class="fas fa-stethoscope service-icon"></i>
+                <h3 class="service-title">Symptom Checker</h3>
+                <p>Use our advanced tool to identify potential conditions based on your symptoms.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-user-md service-icon"></i>
+                <h3 class="service-title">Expert Consultation</h3>
+                <p>Connect with certified healthcare professionals for personalized advice.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-pills service-icon"></i>
+                <h3 class="service-title">Medication Guidance</h3>
+                <p>Get information about medications and proper usage from trusted sources.</p>
+            </div>
+        </div>
+        <div class="modal-overlay" id="symptomModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Symptom Checker</h2>
+                    <span class="close-modal" id="closeModal">&times;</span>
+                </div>
+                <form class="symptom-form" id="symptomForm">
+                   
+                    <div class="form-step active" id="step1">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" placeholder="Enter your age" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sex</label>
+                            <div class="sex-buttons">
+                                <button type="button" class="sex-btn" data-value="Male">Male</button>
+                                <button type="button" class="sex-btn" data-value="Female">Female</button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="next-btn" onclick="nextStep(1)">Next</button>
+                    </div>
+
+                
+                    <div class="form-step" id="step2">
+                        <div class="form-group">
+                            <label for="severity">Severity</label>
+                            <select id="severity" required>
+                                <option value="">Select severity</option>
+                                <option value="mild">Mild</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="severe">Severe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bodypart">Which part of the body is hurting?</label>
+                            <select id="bodypart" onchange="loadSymptoms()" required>
+                                <option value="">Select a body part</option>
+                                <option value="head">Head</option>
+                                <option value="arm">Arm</option>
+                                <option value="leg">Leg</option>
+                                <option value="chest">Chest</option>
+                                <option value="stomach">Stomach</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="next-btn" onclick="nextStep(2)">Next</button>
+                    </div>
+
+
+                    <div class="form-step" id="step3">
+                        <div class="form-group">
+                            <label for="symptoms">Related Symptoms</label>
+                            <select id="symptoms" required>
+                                <option value="">Select a symptom</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="continue-btn">Submit</button>
+                    </div>
+
+
+                    <div class="form-step" id="step4">
+                        <div class="results-container">
+                            <h2>Analysis Results</h2>
+                            <div id="mildResults" class="results-content">
+                                <h3>Possible Causes:</h3>
+                                <p id="causesText"></p>
+
+                                <h3>Recommended Remedies:</h3>
+                                <p id="remediesText"></p>
+                            </div>
+                            <div id="severeWarning" class="results-content" style="display: none;">
+                                <h3>⚠️ Medical Attention Required</h3>
+                                <p>Based on the severe symptoms you've described, we strongly recommend:</p>
+                                <ul>
+                                    <li>Consulting with a healthcare professional immediately</li>
+                                    <li>Visiting the nearest urgent care facility</li>
+                                    <li>Calling emergency services if symptoms are life-threatening</li>
+                                </ul>
+                                <p>For severe conditions, self-treatment is not recommended.</p>
+                            </div>
+                        </div>
+
+                        <button type="button" class="next-btn" id="viewDoctorsBtn">View Recommended Doctors</button>
+                    </div>
+
+                    <div class="form-step" id="step5">
+                        <div class="results-container">
+                            <h2>Recommended Specialists</h2>
+                            <div id="doctorRecommendations" class="results-content">
+                             
+                            </div>
+                        </div>
+
+                        <button type="button" class="next-btn" onclick="resetFormAndClose()">Start Over</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <button type="button" class="next-btn" onclick="nextStep(1)">Next</button>
-      </div>
+        <div class="emergency">
+            <h2><i class="fas fa-exclamation-triangle"></i> Emergency</h2>
+            <p>Contact us immediately if you have an emergency; we're here to provide urgent care and support when you need the best!</p>
 
-
-      <div class="form-step" id="step2">
-        <div class="form-group">
-          <label for="severity">Severity</label>
-          <select id="severity" required>
-            <option value="">Select severity</option>
-            <option value="mild">Mild</option>
-            <option value="moderate">Moderate</option>
-            <option value="severe">Severe</option>
-          </select>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <span>+97798XXXXXXXX</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <span>emergency@gmail.com</span>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="form-group">
-          <label for="bodypart">Which part of the body is hurting?</label>
-          <select id="bodypart" onchange="loadSymptoms()" required>
-            <option value="">Select a body part</option>
-            <option value="head">Head</option>
-            <option value="arm">Arm</option>
-            <option value="leg">Leg</option>
-            <option value="chest">Chest</option>
-            <option value="stomach">Stomach</option>
-          </select>
-        </div>
+    <footer>
+        <p>&copy; PKGS HelpLine. All rights reserved.</p>
+    </footer>
 
-        <button type="button" class="next-btn" onclick="nextStep(2)">Next</button>
-      </div>
-
-      
-      <div class="form-step" id="step3">
-        <div class="form-group">
-          <label for="symptoms">Related Symptoms</label>
-          <select id="symptoms" required>
-            <option value="">Select a symptom</option>
-          </select>
-        </div>
-
-        <button type="submit" class="continue-btn">Submit</button>
-      </div>
-
-      
-      <div class="form-step" id="step4">
-        <div class="results-container">
-          <h2>Analysis Results</h2>
-          <div id="mildResults" class="results-content">
-            <h3>Possible Causes:</h3>
-            <p id="causesText"></p>
-            
-            <h3>Recommended Remedies:</h3>
-            <p id="remediesText"></p>
-          </div>
-          <div id="severeWarning" class="results-content" style="display: none;">
-            <h3>⚠️ Medical Attention Required</h3>
-            <p>Based on the severe symptoms you've described, we strongly recommend:</p>
-            <ul>
-              <li>Consulting with a healthcare professional immediately</li>
-              <li>Visiting the nearest urgent care facility</li>
-              <li>Calling emergency services if symptoms are life-threatening</li>
-            </ul>
-            <p>For severe conditions, self-treatment is not recommended.</p>
-          </div>
-        </div>
-        
-        <button type="button" class="next-btn" onclick="resetForm()">Start Over</button>
-      </div>
-
-    </form>
-  </main>
-
-  <script src="Main page.js"></script>
+    <script src="Main page.js"></script>
 </body>
+
 </html>

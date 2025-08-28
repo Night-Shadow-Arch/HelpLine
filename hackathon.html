@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Medical Login</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="login-container">
-    <h1>Login</h1>
+    <div class="login-header">
+      <i class="fas fa-heartbeat"></i>
+      <h1>Health Portal</h1>
+      <p>Access your medical records securely</p>
+    </div>
+
     <form class="login-form">
-      
       <div class="form-group">
-        <label for="username">Username or Email</label>
-        <input type="text" id="username" placeholder="Enter username or email" required>
+        <div class="input-box">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Email Address" required>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required>
+        <div class="input-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
       </div>
 
-      <button type="submit" class="login-btn"><a href="Main page.html">Login</a></button>
+      <button type="button" class="login-btn" onclick="window.location.href='Main page.html'">
+        Login
+      </button>
     </form>
 
     <div class="register-link">
